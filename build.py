@@ -1,5 +1,5 @@
 import html
-NAV=[("index.html","Home"),("about.html","About"),("services.html","Services"),("work.html","Our Work"),("publications.html","Publications"),("partners.html","Partners"),("careers.html","Careers"),("rfp.html","Work With Us"),("contact.html","Contact")]
+NAV=[("index.html","Home"),("about.html","About"),("services.html","Services"),("work.html","Our Work"),("careers.html","Careers"),("contact.html","Contact")]
 EMAIL="admin@consilienceresearch.in";PHONE="+91-8004458773";FORM="https://forms.gle/cLyLFkTcFjtsE8mZ7"
 def page(fn,title,desc,body,hero=True,intro=False):
     nav="".join(f'<li><a class="l" href="{h}">{t}</a></li>' for h,t in NAV)
@@ -13,8 +13,8 @@ def page(fn,title,desc,body,hero=True,intro=False):
 <body>{introh}<header class="nav"><div class="banner">Now empanelling consultants, young professionals, researchers and interns. <a href="{FORM}" target="_blank" rel="noopener">Apply here</a></div><div class="wrap nv"><a href="index.html"><img src="assets/logo-white.png" alt="Consilience Research Foundation"></a><button class="burger" aria-label="Menu">☰</button><ul>{nav}</ul></div></header>
 <main>{body}</main>
 <footer><div class="wrap"><div class="g"><div><img src="assets/logo-white.png" alt="CRF"><p>An independent, multidisciplinary research organisation linking research, policy, technology and sustainable development.</p></div>
-<div><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">Our Work</a><a href="publications.html">Publications</a><a href="partners.html">Partners</a></div>
-<div><h4>Join and Policies</h4><a href="careers.html">Careers</a><a href="rfp.html">Work With Us</a><a href="https://crfblogs25.blogspot.com/" target="_blank" rel="noopener">Blog</a><a href="policy.html">Policies</a><a href="policy.html#research">Research Policy</a></div>
+<div><h4>Explore</h4><a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">Our Work</a><a href="work.html#publications">Publications</a><a href="about.html#partners">Partners and Network</a></div>
+<div><h4>Join and Policies</h4><a href="careers.html">Careers</a><a href="contact.html#work-with-us">Work With Us</a><a href="https://crfblogs25.blogspot.com/" target="_blank" rel="noopener">Blog</a><a href="policy.html">Policies</a><a href="policy.html#research">Research Policy</a></div>
 <div><h4>Contact</h4><a href="mailto:{EMAIL}">{EMAIL}</a><a href="tel:{PHONE}">{PHONE}</a><p>Dehradun 248142, Uttarakhand<br>Lucknow 226002, Uttar Pradesh<br>Pan India and overseas</p><a href="https://www.linkedin.com/company/samyakenc" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/crfofficialind/" target="_blank" rel="noopener">Instagram</a></div></div>
 <div class="bot"><span>© 2026 Consilience Research Foundation. A Section 8 company registered under the Companies Act, 2013. MSME registered. CIN U72100UT2026NPL021839</span><span>All rights reserved</span></div></div></footer>
 <script src="js/main.js"></script></body></html>'''
@@ -46,7 +46,7 @@ home=f'''<section class="hero"><canvas id="heroCanvas"></canvas><div class="wrap
 <p class="eyebrow rv">Independent research · Section 8 not-for-profit</p>
 <h1 class="rv d1">Evidence that moves from <em>journals</em> into policy and practice.</h1>
 <p class="lead rv d2">Consilience Research Foundation links rigorous research with policy, technology and implementation for water, waste, climate and sustainable development, across India and overseas.</p>
-<div class="cta rv d3"><a class="btn" href="work.html">See our work</a><a class="btn ghost" href="rfp.html">Share a requirement</a></div></div><div class="scroll"></div></section>
+<div class="cta rv d3"><a class="btn" href="work.html">See our work</a><a class="btn ghost" href="contact.html#work-with-us">Share a requirement</a></div></div><div class="scroll"></div></section>
 <section class="stats"><div class="wrap g"><div class="rv"><b data-count="19">0</b><span>Wards planned, Bakshi Ka Talab</span></div><div class="rv d1"><b data-count="71200">0</b><span>People in the plan area</span></div><div class="rv d2"><b data-count="8">0</b><span>Published papers</span></div><div class="rv d3"><b data-count="16">0</b><span>Services across four areas</span></div></div></section>
 <section class="sec"><div class="wrap split"><div class="rv l"><p class="eyebrow">Who we are</p><h2>Bridging science and society</h2>
 <p class="lead">CRF is an independent, multidisciplinary research organisation founded by a PhD researcher in Geo-Environmental Engineering. We exist because good research often fails to reach the people who need it.</p>
@@ -81,7 +81,7 @@ w("about.html","About","About Consilience Research Foundation: an independent, m
 
 # ---------- SERVICES ----------
 tabs='<div class="tabs"><button class="on" data-f="all">All 16</button><button data-f="research">Research</button><button data-f="consult">Consulting</button><button data-f="capacity">Capacity building</button><button data-f="knowledge">Knowledge</button></div>'
-services=ph("Services","Sixteen ways we help governments, institutions, industry and communities turn evidence into action.","What we offer")+f'<section class="sec"><div class="wrap">{tabs}<div class="grid g3">'+"".join(svc(s,i) for i,s in enumerate(S))+f'</div></div></section><section class="band"><div class="wrap"><h2>Need something specific?</h2><p>We tailor every engagement to your context.</p><a class="btn" href="rfp.html">Send a requirement</a></div></section>'
+services=ph("Services","Sixteen ways we help governments, institutions, industry and communities turn evidence into action.","What we offer")+f'<section class="sec"><div class="wrap">{tabs}<div class="grid g3">'+"".join(svc(s,i) for i,s in enumerate(S))+f'</div></div></section><section class="band"><div class="wrap"><h2>Need something specific?</h2><p>We tailor every engagement to your context.</p><a class="btn" href="contact.html#work-with-us">Send a requirement</a></div></section>'
 w("services.html","Services","16 research, consulting, training and knowledge services: ESG, solid waste, water security, environmental compliance, impact assessment and more.",services)
 
 # ---------- WORK ----------
@@ -164,3 +164,32 @@ policy=ph("Policies","Terms, refunds, privacy and our authorship and research et
 <li><b>Misconduct:</b> concerns go to the CRF Ethics Committee. Penalties can include suspension from authorship, retraction and notifying institutions.</li>
 <li><b>Consent:</b> all authors approve the final manuscript. Names change only with written email consent, and CRF keeps an Authorship Contribution Log.</li></ul></div></section>'''
 w("policy.html","Policies","Terms, refund policy, privacy policy and the authorship and research ethics policy of Consilience Research Foundation.",policy)
+
+# ---------- MERGE: About+Partners, Work+Publications, Contact+Work With Us ----------
+def body(x): return x.split('</section>',1)[1]
+def chips(items): return '<div class="chips"><div class="wrap">'+"".join(f'<a href="{h}">{t}</a>' for h,t in items)+'</div></div>'
+about2=about.replace('</section>','</section>'+chips([("#who","Who we are"),("#focus","Focus areas"),("#partners","Partners"),("#network","Academic network")]),1)
+about2=about2.replace('<section class="sec"><div class="wrap split">','<section class="sec" id="who"><div class="wrap split">',1).replace('<section class="sec alt"><div class="wrap"><p class="eyebrow">Focus areas','<section class="sec alt" id="focus"><div class="wrap"><p class="eyebrow">Focus areas',1)
+pb=body(partners).replace('<section class="sec"><div class="wrap"><p class="eyebrow">Programme partners','<section class="sec" id="partners"><div class="wrap"><p class="eyebrow">Programme partners',1).replace('<section class="sec alt"><div class="wrap"><p class="eyebrow">Our researchers','<section class="sec alt" id="network"><div class="wrap"><p class="eyebrow">Our researchers',1)
+w("about.html","About and Partners","About Consilience Research Foundation: who we are, focus areas, programme partners and the academic network of our researchers and interns.",about2.replace('<section class="sec alt"><div class="wrap"><p class="eyebrow">Our vision','<section class="sec"><div class="wrap"><p class="eyebrow">Our vision')+pb)
+work2=work.replace('</section>','</section>'+chips([("#wsp","Water security plan"),("#training","ULB training"),("#record","Track record"),("#innovation","Patent and tools"),("#publications","Publications")]),1)
+work2=work2.replace('<section class="sec alt"><div class="wrap split"><div class="rv l"><span class="tag">Capacity','<section class="sec alt" id="training"><div class="wrap split"><div class="rv l"><span class="tag">Capacity',1).replace('<section class="sec"><div class="wrap"><p class="eyebrow">Track record','<section class="sec" id="record"><div class="wrap"><p class="eyebrow">Track record',1).replace('<section class="sec alt"><div class="wrap"><div class="grid g2" style="margin:0"><div class="card rv"><span class="tag">Patent','<section class="sec alt" id="innovation"><div class="wrap"><div class="grid g2" style="margin:0"><div class="card rv"><span class="tag">Patent',1)
+pubb=body(pubs).replace('<section class="sec"><div class="wrap">','<section class="sec" id="publications"><div class="wrap"><p class="eyebrow">Publications</p><h2>Published research</h2><p class="lead" style="margin-bottom:34px">Peer-reviewed and preprint papers on waste, water, energy and climate, often co-authored with young researchers and honorary mentors.</p>',1).replace('<div class="grid g2" style="margin-top:0">','<div class="grid g2" style="margin-top:0">',1)
+w("work.html","Our Work and Publications","Water security planning for WaterAid India, ULB training, a patented waste collection vehicle, the SWM Logbook Generator, case studies and 8 published papers.",work2+pubb)
+cont2=contact.replace('</section>','</section>'+chips([("#general","General enquiry"),("#work-with-us","Work with us (clients and partners)")]),1).replace('<section class="sec"><div class="wrap contact">','<section class="sec" id="general"><div class="wrap contact">',1)
+rb=body(rfp).replace('<section class="sec"><div class="wrap"><p class="eyebrow">Key offerings','<section class="sec alt" id="work-with-us"><div class="wrap"><p class="eyebrow">For clients and partners</p><h2 style="margin-bottom:10px">Work with us</h2><p class="lead" style="margin-bottom:30px">Share a requirement or RFP and we will respond with a tailored approach.</p><p class="eyebrow" style="margin-top:30px">Key offerings',1).replace('<section class="sec alt"><div class="wrap contact">','<section class="sec"><div class="wrap contact">',1)
+w("contact.html","Contact and Work With Us","Contact Consilience Research Foundation or send a requirement or RFP: Dehradun and Lucknow offices, email, phone and enquiry forms.",cont2+rb)
+# redirect stubs for retired pages
+def stub(fn,t):
+    open(fn,"w").write(f'<!DOCTYPE html><html><head><meta charset="utf-8"><title>Redirecting</title><meta name="robots" content="noindex"><link rel="canonical" href="https://www.consilienceresearch.in/{t}"><meta http-equiv="refresh" content="0;url={t}"><script>location.replace("{t}"+location.hash)</script></head><body><a href="{t}">Continue</a></body></html>')
+for fn,t in {"partners.html":"about.html#partners","publications.html":"work.html#publications","rfp.html":"contact.html#work-with-us","rfp-requirements.html":"contact.html#work-with-us","publications-projects.html":"work.html#publications","research-policy.html":"policy.html#research","about-us.html":"about.html","services-details.html":"services.html","career.html":"careers.html","home.html":"index.html"}.items(): stub(fn,t)
+D="https://www.consilienceresearch.in"
+open("sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f'<url><loc>{D}/{"" if p=="index" else p+".html"}</loc></url>\n' for p in ["index","about","services","work","careers","contact","policy"])+'</urlset>\n')
+
+# ---------- VERIFY (hidden, not in nav/sitemap) ----------
+vbody=ph("Internship Verification","Verify an internship certificate issued by Consilience Research Foundation. Search by the reference number printed on the certificate.","Verification")+'''<section class="sec"><div class="wrap"><label style="max-width:460px;display:block">Search by reference number, name or institute<input id="q" type="search" placeholder="e.g. CRFINT1625" autocomplete="off"></label>
+<p id="cnt" style="margin:14px 0;color:var(--muted)"></p><div class="tw"><table class="vt"><thead><tr><th>SN</th><th>Ref No.</th><th>Name</th><th>Institute</th><th>DOJ</th><th>DOE</th><th>Grade</th><th>Synopsis</th><th>Remark</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p style="margin-top:22px;color:var(--muted);font-size:.95rem">DOJ: date of joining. DOE: date of ending. For any query about a certificate, write to <a href="mailto:admin@consilienceresearch.in">admin@consilienceresearch.in</a>.</p></div></section><script src="js/interns.js"></script><script src="js/verify.js"></script>'''
+vh=page("verify.html","Internship Verification","Verify internship certificates issued by Consilience Research Foundation.",vbody)
+vh=vh.replace('<link rel="canonical"','<meta name="robots" content="noindex,nofollow"><link rel="canonical"')
+open("verify.html","w",encoding="utf-8").write(vh)
